@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4217129016015282117}
   - component: {fileID: 9185516098420211913}
+  - component: {fileID: 8088638078261697286}
+  - component: {fileID: 483880441372117225}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -47,6 +49,34 @@ CapsuleCollider:
   m_Height: 3.1
   m_Direction: 2
   m_Center: {x: 0, y: 1.1, z: -0.06}
+--- !u!54 &8088638078261697286
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172682698217572006}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &483880441372117225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172682698217572006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179598ebac69c5343b7745b32c781a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6653092588033514412
 GameObject:
   m_ObjectHideFlags: 0
