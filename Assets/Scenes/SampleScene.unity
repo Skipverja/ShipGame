@@ -886,5 +886,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island
       objectReference: {fileID: 0}
+    - target: {fileID: 3624382332094823997, guid: 8a3f938bf7277424cb2dac46b9806806,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcb2bd2fa1f3b8d4db7ec3ebe5d22bd0, type: 2}
+    - target: {fileID: 3624382332094823997, guid: 8a3f938bf7277424cb2dac46b9806806,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcb2bd2fa1f3b8d4db7ec3ebe5d22bd0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3f938bf7277424cb2dac46b9806806, type: 3}
