@@ -13,8 +13,8 @@ namespace Scipts
         private Rigidbody _rigidbody;
         private Transform _transform;
 
-        public float speed = 20f;
-        public float rotationSpeed = 5f;
+        public float speed = 11f;
+        public float rotationSpeed = 0.25f;
 
         public void Start()
         {
