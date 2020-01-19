@@ -16,4 +16,13 @@ public class EntityStats : MonoBehaviour
 
     [Min(0.1f)]
     public float maxHealth = 100f;
+
+    public bool hittable = true;
+
+    public void Hit(float relativeVelocityMagnitude)
+    {
+        if(!hittable) return;
+        
+        health -= relativeVelocityMagnitude;
+    }
 }
