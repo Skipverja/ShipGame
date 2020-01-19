@@ -7,8 +7,8 @@ PhysicMaterial:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ShipBounceableMaterial
-  dynamicFriction: 0.4
+  dynamicFriction: 0.6
   staticFriction: 0.9
-  bounciness: 0.9
-  frictionCombine: 0
+  bounciness: 0.1
+  frictionCombine: 2
   bounceCombine: 2
