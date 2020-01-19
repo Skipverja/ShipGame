@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: ShipBounceableMaterial
   dynamicFriction: 0.4
   staticFriction: 0.9
-  bounciness: 0.2
+  bounciness: 0.9
   frictionCombine: 0
   bounceCombine: 2
