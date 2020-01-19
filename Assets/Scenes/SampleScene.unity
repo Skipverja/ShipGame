@@ -211,6 +211,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &398061851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1172682698217572006, guid: 0035446716978e1498c65d7e8292d26f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1396582003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &398061860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398061851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc15a14fdc8c444f8053112e963d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: 4
+  acceleration: 1.1
 --- !u!1 &607774920
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607774920}
   m_LocalRotation: {x: 0.55578786, y: -0, z: -0, w: 0.83132416}
-  m_LocalPosition: {x: -0.17, y: 17.38, z: -4.9300003}
+  m_LocalPosition: {x: -0.17, y: 30, z: -4.9300003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 745164955}
@@ -384,7 +404,7 @@ PrefabInstance:
     - target: {fileID: 483880441372117225, guid: 0035446716978e1498c65d7e8292d26f,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1172682698217572006, guid: 0035446716978e1498c65d7e8292d26f,
         type: 3}
@@ -446,22 +466,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7740478305148546111, guid: 0035446716978e1498c65d7e8292d26f,
-        type: 3}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7740478305148546111, guid: 0035446716978e1498c65d7e8292d26f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7740478305148546111, guid: 0035446716978e1498c65d7e8292d26f,
-        type: 3}
-      propertyPath: rotationSpeed
-      value: 0.25
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 483880441372117225, guid: 0035446716978e1498c65d7e8292d26f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0035446716978e1498c65d7e8292d26f, type: 3}
 --- !u!1 &1501893656
 GameObject:
