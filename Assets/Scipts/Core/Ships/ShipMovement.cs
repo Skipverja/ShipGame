@@ -1,7 +1,5 @@
-using System;
 using Scipts.Input;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Scipts
 {

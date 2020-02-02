@@ -20,7 +20,7 @@ public class KeyboardInput : MonoBehaviour, IPlayerInput
 
         Acceleration = Input.GetKey(KeyCode.W) ? 1f : 0f;
         if (AllowBackwardMovement){
-            Acceleration = Input.GetKey(KeyCode.S) ? -1f : Acceleration;
+            Acceleration = Input.GetKey(KeyCode.S) ? -0.8f : Acceleration;
         }
     }
 

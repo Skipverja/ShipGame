@@ -21,7 +21,7 @@ public class GamePadInput : MonoBehaviour, IPlayerInput
         Acceleration = Input.GetKey(KeyCode.UpArrow) ? 1f : 0f;
         if (AllowBackwardMovement)
         {
-            Acceleration = Input.GetKey(KeyCode.DownArrow) ? -1f : Acceleration;
+            Acceleration = Input.GetKey(KeyCode.DownArrow) ? -0.8f : Acceleration;
         }
     }
 
