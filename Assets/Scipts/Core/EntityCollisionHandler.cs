@@ -1,14 +1,16 @@
-﻿using Scipts.Core;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EntityCollisionHandler : MonoBehaviour
+namespace Scipts.Core
 {
-    public EntityStats entityStats;
-    
-    private void OnCollisionEnter(Collision other)
+    public class EntityCollisionHandler : MonoBehaviour
     {
-        if (!other.collider.CompareTag(Tags.EntityTag)) return;
+        public EntityStats entityStats;
+    
+        private void OnCollisionEnter(Collision other)
+        {
+            if (!other.collider.CompareTag(Tags.EntityTag)) return;
 
-        entityStats.Hit(other.relativeVelocity.magnitude);
+            entityStats.Hit(other.relativeVelocity.magnitude);
+        }
     }
 }

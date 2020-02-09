@@ -1,7 +1,7 @@
 using Scipts.Input;
 using UnityEngine;
 
-namespace Scipts
+namespace Scipts.Core.Ships
 {
     [RequireComponent(typeof(IPlayerInput))]
     [RequireComponent(typeof(Rigidbody))]

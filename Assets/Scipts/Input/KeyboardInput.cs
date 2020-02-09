@@ -1,30 +1,35 @@
-﻿using Scipts.Input;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class KeyboardInput : MonoBehaviour, IPlayerInput
+namespace Scipts.Input
 {
-    public void Update()
+    public class KeyboardInput : MonoBehaviour, IPlayerInput
     {
-        if (Input.GetKey(KeyCode.A))
+        public void Update()
         {
-            Rotation = -1f;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            Rotation = 1f;
-        }
-        else
-        {
-            Rotation = 0f;
+            if (UnityEngine.Input.GetKey(KeyCode.A))
+            {
+                Rotation = -1f;
+            }
+            else if (UnityEngine.Input.GetKey(KeyCode.D))
+            {
+                Rotation = 1f;
+            }
+            else
+            {
+                Rotation = 0f;
+            }
+
+            Shooting = UnityEngine.Input.GetKey(KeyCode.Space);
+
+            Acceleration = UnityEngine.Input.GetKey(KeyCode.W) ? 1f : 0f;
+            if (AllowBackwardMovement){
+                Acceleration = UnityEngine.Input.GetKey(KeyCode.S) ? -0.8f : Acceleration;
+            }
         }
 
-        Acceleration = Input.GetKey(KeyCode.W) ? 1f : 0f;
-        if (AllowBackwardMovement){
-            Acceleration = Input.GetKey(KeyCode.S) ? -0.8f : Acceleration;
-        }
+        public bool AllowBackwardMovement {get; set;} = true;
+        public float Rotation { get; set; }
+        public float Acceleration { get; set; }
+        public bool Shooting { get; private set; }
     }
-
-    public bool AllowBackwardMovement {get; set;} = true;
-    public float Rotation { get; set; }
-    public float Acceleration { get; set; }
 }
