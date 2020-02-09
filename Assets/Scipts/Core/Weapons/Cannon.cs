@@ -9,12 +9,15 @@ namespace Scipts.Core.Weapons
         public float bulletForce = 10f;
         
         public float Cooldown => cooldown;
-        public void Shoot(Transform[] emitters, GameObject cannonball)
+        public void Shoot(GameObject[] emitters, GameObject cannonball)
         {
-            GameObject shell = Instantiate(cannonball, emitters[0].position, emitters[0].rotation);
-            var shellRigidbody = shell.GetComponent<Rigidbody>();
+            foreach (GameObject emitter in emitters)
+            {
+                GameObject shell = Instantiate(cannonball, emitter.transform.position, emitters[0].transform.rotation);
+                var shellRigidbody = shell.GetComponent<Rigidbody>();
             
-            shellRigidbody.AddForce(shell.transform.forward * bulletForce);
+                shellRigidbody.AddForce(shell.transform.forward * bulletForce);
+            }
         }
     }
 }

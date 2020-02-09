@@ -13,7 +13,7 @@ namespace Scipts.Core.Ships
 
         private float _nextShootTime;
 
-        public Transform shellEmitter;
+        public GameObject shellEmitter;
 
         public GameObject cannonball;
 

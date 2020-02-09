@@ -1038,20 +1038,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4249628956629834436, guid: 0035446716978e1498c65d7e8292d26f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8088638078261697286, guid: 0035446716978e1498c65d7e8292d26f,
         type: 3}
       propertyPath: m_Constraints
       value: 80
       objectReference: {fileID: 0}
-    - target: {fileID: 8766249787708474699, guid: 0035446716978e1498c65d7e8292d26f,
+    - target: {fileID: 8272549200217568247, guid: 0035446716978e1498c65d7e8292d26f,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 8976371960941308486, guid: 0035446716978e1498c65d7e8292d26f,
+    - target: {fileID: 8766249787708474699, guid: 0035446716978e1498c65d7e8292d26f,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976371960941308486, guid: 0035446716978e1498c65d7e8292d26f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0035446716978e1498c65d7e8292d26f, type: 3}
@@ -1223,20 +1233,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4249628956629834436, guid: 0035446716978e1498c65d7e8292d26f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8088638078261697286, guid: 0035446716978e1498c65d7e8292d26f,
         type: 3}
       propertyPath: m_Constraints
       value: 80
       objectReference: {fileID: 0}
-    - target: {fileID: 8766249787708474699, guid: 0035446716978e1498c65d7e8292d26f,
+    - target: {fileID: 8272549200217568247, guid: 0035446716978e1498c65d7e8292d26f,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 8976371960941308486, guid: 0035446716978e1498c65d7e8292d26f,
+    - target: {fileID: 8766249787708474699, guid: 0035446716978e1498c65d7e8292d26f,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976371960941308486, guid: 0035446716978e1498c65d7e8292d26f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 483880441372117225, guid: 0035446716978e1498c65d7e8292d26f, type: 3}
