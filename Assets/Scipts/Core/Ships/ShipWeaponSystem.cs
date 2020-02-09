@@ -4,9 +4,12 @@ using UnityEngine;
 namespace Scipts.Core.Ships
 {
     [RequireComponent(typeof(IPlayerInput))]
+    [RequireComponent(typeof(IWeapon))]
     public class ShipWeaponSystem : MonoBehaviour
     {
         private IPlayerInput _playerInput;
+
+        private IWeapon _weapon;
 
         private float _nextShootTime;
 
@@ -14,20 +17,19 @@ namespace Scipts.Core.Ships
 
         public GameObject cannonball;
 
-        public IWeapon weapon;
-
         public void Start()
         {
             _nextShootTime = Time.time;
             _playerInput = GetComponent<IPlayerInput>();
+            _weapon = GetComponent<IWeapon>();
         }
 
         public void Update()
         {
             if (!_playerInput.Shooting || !(Time.time >= _nextShootTime)) return;
             
-            _nextShootTime = Time.time + weapon.Cooldown;
-            weapon.Shoot(new[] {shellEmitter}, cannonball);
+            _nextShootTime = Time.time + _weapon.Cooldown;
+            _weapon.Shoot(new[] {shellEmitter}, cannonball);
         }
     }
 }
