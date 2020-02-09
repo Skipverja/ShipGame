@@ -5,5 +5,7 @@ namespace Scipts.Input
         float Rotation { get; set; }
         
         float Acceleration { get; set; }
+        
+        bool Shooting { get; }
     }
 }
