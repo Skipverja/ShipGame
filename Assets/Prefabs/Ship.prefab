@@ -48,6 +48,8 @@ GameObject:
   - component: {fileID: 7180711473051494485}
   - component: {fileID: 3335559989679029225}
   - component: {fileID: 1729787602095928317}
+  - component: {fileID: 7251491872832711463}
+  - component: {fileID: 872168557340791239}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Entity
@@ -199,7 +201,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 3
-  bulletForce: 500
+  bulletForce: 1000
+--- !u!65 &7251491872832711463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172682698217572006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 2.7756844, z: 0.3}
+  m_Center: {x: 0, y: 1.7890425, z: 0}
+--- !u!65 &872168557340791239
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172682698217572006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.88, y: 1.4562511, z: 0.6031847}
+  m_Center: {x: 0, y: 1.5483265, z: 0.16520166}
 --- !u!1 &3244978440499097728
 GameObject:
   m_ObjectHideFlags: 0
