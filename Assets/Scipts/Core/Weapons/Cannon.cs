@@ -5,7 +5,6 @@ namespace Scipts.Core.Weapons
 {
     public class Cannon : MonoBehaviour, IWeapon
     {
-        public float startingAngle = 30f;
         public float cooldown = 3f;
         public float bulletForce = 10f;
         
@@ -14,10 +13,7 @@ namespace Scipts.Core.Weapons
         {
             foreach (GameObject emitter in emitters)
             {
-                Quaternion shellRotation = emitters[0].transform.rotation;
-                shellRotation.x = startingAngle;
-                
-                GameObject shell = Instantiate(cannonball, emitter.transform.position, shellRotation);
+                GameObject shell = Instantiate(cannonball, emitter.transform.position, emitters[0].transform.rotation);
                 var shellRigidbody = shell.GetComponent<Rigidbody>();
             
                 shellRigidbody.AddForce(shell.transform.forward * bulletForce);
