@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826748645650911568}
-  m_LocalRotation: {x: -0.06697467, y: 0.7039279, z: 0.06697467, w: 0.7039279}
+  m_LocalRotation: {x: -0.018263156, y: 0.7068709, z: 0.018263156, w: 0.7068709}
   m_LocalPosition: {x: 1.119, y: 1.285, z: -1.042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4217129016015282117}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -10.87, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.96, y: 90, z: 0}
 --- !u!1 &1172682698217572006
 GameObject:
   m_ObjectHideFlags: 0
@@ -48,8 +48,6 @@ GameObject:
   - component: {fileID: 7180711473051494485}
   - component: {fileID: 3335559989679029225}
   - component: {fileID: 1729787602095928317}
-  - component: {fileID: 7251491872832711463}
-  - component: {fileID: 872168557340791239}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Entity
@@ -129,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa767c410f549a5a086788389e71e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 11
   rotationSpeed: 1
 --- !u!114 &5883925624037351410
 MonoBehaviour:
@@ -200,34 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8186baf3cb2475893d398a94b3ccdc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
-  bulletForce: 1000
---- !u!65 &7251491872832711463
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172682698217572006}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.44, y: 2.7756844, z: 0.3}
-  m_Center: {x: 0, y: 1.7890425, z: 0}
---- !u!65 &872168557340791239
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172682698217572006}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.88, y: 1.4562511, z: 0.6031847}
-  m_Center: {x: 0, y: 1.5483265, z: 0.16520166}
+  cooldown: 1.2
+  bulletForce: 15
 --- !u!1 &3244978440499097728
 GameObject:
   m_ObjectHideFlags: 0
