@@ -1,6 +1,7 @@
 name: Actions 😎
 
 on:
+  pull_request: {}
   push: {}
 
 env:
