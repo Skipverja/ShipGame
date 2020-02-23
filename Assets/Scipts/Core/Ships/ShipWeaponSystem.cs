@@ -1,11 +1,12 @@
-﻿using Scipts.Input;
+﻿using Mirror;
+using Scipts.Input;
 using UnityEngine;
 
 namespace Scipts.Core.Ships
 {
     [RequireComponent(typeof(IPlayerInput))]
     [RequireComponent(typeof(IWeapon))]
-    public class ShipWeaponSystem : MonoBehaviour
+    public class ShipWeaponSystem : NetworkBehaviour
     {
         private IPlayerInput _playerInput;
 
@@ -29,6 +30,13 @@ namespace Scipts.Core.Ships
             if (!_playerInput.Shooting || !(Time.time >= _nextShootTime)) return;
             
             _nextShootTime = Time.time + _weapon.Cooldown;
+
+            CmdShoot();
+        }
+
+        [Command]
+        private void CmdShoot()
+        {
             _weapon.Shoot(new[] {shellEmitter}, cannonball);
         }
     }

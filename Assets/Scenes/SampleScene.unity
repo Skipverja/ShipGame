@@ -1695,7 +1695,7 @@ MonoBehaviour:
   runInBackground: 1
   startOnHeadless: 1
   serverTickRate: 30
-  showDebugMessages: 0
+  showDebugMessages: 1
   offlineScene: 
   onlineScene: 
   transport: {fileID: 1390875267}
@@ -1706,7 +1706,8 @@ MonoBehaviour:
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 3709845789497523889, guid: 034142a8ca723384da1668f9a1a25d85, type: 3}
 --- !u!4 &1390875269
 Transform:
   m_ObjectHideFlags: 0

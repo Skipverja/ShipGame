@@ -1,3 +1,4 @@
+using Mirror;
 using Scipts.Core.Ships;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ namespace Scipts.Core.Weapons
                 var shellRigidbody = shell.GetComponent<Rigidbody>();
             
                 shellRigidbody.AddForce(shell.transform.forward * bulletForce);
+
+                NetworkServer.Spawn(shell);
             }
         }
     }
