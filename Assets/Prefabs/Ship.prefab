@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 4217129016015282117}
   - component: {fileID: 9185516098420211913}
   - component: {fileID: 8088638078261697286}
+  - component: {fileID: 4404932705880013374}
   - component: {fileID: 483880441372117225}
   - component: {fileID: 7740478305148546111}
   - component: {fileID: 5883925624037351410}
@@ -105,6 +106,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &4404932705880013374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172682698217572006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac7d1a0d2c54210a77939f5cd29bbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  Velocity: {x: 0, y: 0, z: 0}
+  AngularVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &483880441372117225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179598ebac69c5343b7745b32c781a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.01
 --- !u!114 &7740478305148546111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa767c410f549a5a086788389e71e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   speed: 11
   rotationSpeed: 1
 --- !u!114 &5883925624037351410
@@ -143,6 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0871993946474468142d4ac1fed5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   health: 0
   maxHealth: 100
   hittable: 1
@@ -172,6 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f0755ecfd5751459de042010cabbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   entityStats: {fileID: 5883925624037351410}
 --- !u!114 &3335559989679029225
 MonoBehaviour:
@@ -185,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852b14a7e4948b1469a2fc3a7c23ae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   shellEmitter: {fileID: 826748645650911568}
   cannonball: {fileID: 3709845789497523889, guid: 034142a8ca723384da1668f9a1a25d85,
     type: 3}
@@ -230,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0.03
   clientAuthority: 1
   localPositionSensitivity: 0.01
   localRotationSensitivity: 0.01
