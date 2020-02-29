@@ -1,11 +1,17 @@
-﻿using UnityEngine;
+﻿using Mirror;
+using UnityEngine;
 
 namespace Scipts.Input
 {
-    public class KeyboardInput : MonoBehaviour, IPlayerInput
+    public class KeyboardInput : NetworkBehaviour, IPlayerInput
     {
         public void Update()
         {
+            if (!isLocalPlayer)
+            {
+                return;
+            }
+            
             if (UnityEngine.Input.GetKey(KeyCode.A))
             {
                 Rotation = -1f;
