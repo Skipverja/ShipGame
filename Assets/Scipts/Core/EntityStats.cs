@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Mirror;
+using UnityEngine;
 
-public class EntityStats : MonoBehaviour
+public class EntityStats : NetworkBehaviour
 {
     public void Start()
     {
@@ -11,18 +12,16 @@ public class EntityStats : MonoBehaviour
         }
     }
 
-    [Min(0f)]
-    public float health;
+    [Min(0f)] [SyncVar] public float health;
 
-    [Min(0.1f)]
-    public float maxHealth = 100f;
+    [Min(0.1f)] public float maxHealth = 100f;
 
     public bool hittable = true;
 
-    public void Hit(float relativeVelocityMagnitude)
+    public void Hit(float power)
     {
-        if(!hittable) return;
-        
-        health -= relativeVelocityMagnitude;
+        if (!hittable) return;
+
+        health -= power;
     }
 }
