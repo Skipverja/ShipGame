@@ -643,10 +643,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: d04eb554-6007-480e-8467-c99dcc9739ab
+  cloudProjectId: 8252aa25-1fad-402c-9b54-8e3fda020801
   framebufferDepthMemorylessMode: 0
-  projectName: ShipGame
-  organizationId: yegorf1
+  projectName: Ship Game
+  organizationId: yogurtthehorse
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
