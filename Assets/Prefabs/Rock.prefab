@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3624382331230335124}
   - component: {fileID: 9165746299695433016}
   m_Layer: 0
-  m_Name: Island
+  m_Name: Rock
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0871993946474468142d4ac1fed5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   health: 0
   maxHealth: 100
   hittable: 0
