@@ -14,7 +14,7 @@ namespace Scipts.Core.Ships
 
         private float[] _nextShootTimeByWeapon;
 
-        public int selectedWeapon;
+        public int selectedWeapon = 0;
 
         public GameObject shellEmitter;
 
@@ -33,8 +33,6 @@ namespace Scipts.Core.Ships
             _nextShootTimeByWeapon = _weapons
                 .Select(_ => Time.time)
                 .ToArray();
-
-            selectedWeapon = 0;
         }
 
         public void Update()
