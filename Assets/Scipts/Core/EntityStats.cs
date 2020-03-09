@@ -12,18 +12,6 @@ public class EntityStats : NetworkBehaviour
         }
     }
 
-    [SyncVar] 
-    private bool _isFreezed;
-    public bool isFreezed
-    {
-        get { return _isFreezed; }
-        set { _isFreezed = value; CmdChangeIsFreezed(value); }
-    }
-    
-    [Command]
-    public void CmdChangeIsFreezed(bool value){
-        _isFreezed = value;
-    }
 
     [Min(0f)] [SyncVar] public float health;
 

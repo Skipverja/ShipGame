@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Scipts.Core.Ships;
 using UnityEngine;
 
 namespace Scipts.Core
@@ -8,15 +9,19 @@ namespace Scipts.Core
 
         private void OnTriggerEnter(Collider other)
         {
-            var es = other.GetComponent<EntityStats>();
-            es.isFreezed = true;
+            var shipMovement = other.GetComponent<ShipMovement>();
+            if (shipMovement != null){
+                shipMovement.isFreezed = true;
+            }
             
         }
 
         private void OnTriggerExit(Collider other)
         {
-            var es = other.GetComponent<EntityStats>();
-            es.isFreezed = false;
+            var shipMovement = other.GetComponent<ShipMovement>();
+            if (shipMovement != null){
+                shipMovement.isFreezed = false;
+            }
         }
     }
 }

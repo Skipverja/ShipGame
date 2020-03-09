@@ -1415,7 +1415,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3959776520765505696}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1373750664
+--- !u!114 &1373750668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2194,6 +2194,11 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3959776520773260738, guid: 11234efcd63d57b429820201467f49e9,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3959776520773260741, guid: 11234efcd63d57b429820201467f49e9,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -2214,5 +2219,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d96563e9f16d71347aea99f47a351e2c, type: 2}
+    - target: {fileID: 3959776522469470806, guid: 11234efcd63d57b429820201467f49e9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11234efcd63d57b429820201467f49e9, type: 3}
