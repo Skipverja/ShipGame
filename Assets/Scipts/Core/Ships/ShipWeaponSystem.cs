@@ -14,18 +14,18 @@ namespace Scipts.Core.Ships
 
         private float[] _nextShootTimeByWeapon;
 
-        public int selectedWeapon = 0;
+        [SyncVar] public int selectedWeapon = 0;
 
         public GameObject shellEmitter;
 
         public List<GameObject> weaponsObjects;
-        
+
         private IWeapon[] _weapons;
 
         public void Start()
         {
             _playerInput = GetComponent<IPlayerInput>();
-            
+
             _weapons = weaponsObjects
                 .Select(w => w.GetComponent<IWeapon>())
                 .ToArray();
@@ -37,7 +37,25 @@ namespace Scipts.Core.Ships
 
         public void Update()
         {
-            if (!_playerInput.Shooting || !(Time.time >= _nextShootTimeByWeapon[selectedWeapon])) 
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Q))
+            {
+                selectedWeapon--;
+                if (selectedWeapon < 0)
+                {
+                    selectedWeapon = _weapons.Length - 1;
+                }
+            }
+
+            if (UnityEngine.Input.GetKeyDown(KeyCode.E))
+            {
+                selectedWeapon++;
+                if (selectedWeapon >= _weapons.Length)
+                {
+                    selectedWeapon = 0;
+                }
+            }
+            
+            if (!_playerInput.Shooting || !(Time.time >= _nextShootTimeByWeapon[selectedWeapon]))
                 return;
 
             _nextShootTimeByWeapon[selectedWeapon] = Time.time + _weapons[selectedWeapon].Cooldown;
