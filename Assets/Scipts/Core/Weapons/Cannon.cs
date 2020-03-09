@@ -8,15 +8,18 @@ namespace Scipts.Core.Weapons
     {
         public float cooldown = 3f;
         public float bulletForce = 10f;
-        
+
+        public GameObject cannonball;
+
         public float Cooldown => cooldown;
-        public void Shoot(GameObject[] emitters, GameObject cannonball)
+
+        public void Shoot(GameObject[] emitters)
         {
             foreach (GameObject emitter in emitters)
             {
                 GameObject shell = Instantiate(cannonball, emitter.transform.position, emitters[0].transform.rotation);
                 var shellRigidbody = shell.GetComponent<Rigidbody>();
-            
+
                 shellRigidbody.AddForce(shell.transform.forward * bulletForce);
 
                 NetworkServer.Spawn(shell);

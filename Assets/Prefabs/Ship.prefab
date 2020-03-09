@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 3027842193324982582}
   - component: {fileID: 7180711473051494485}
   - component: {fileID: 3335559989679029225}
-  - component: {fileID: 1729787602095928317}
   - component: {fileID: 4278445811126324613}
   - component: {fileID: 2694333094107435778}
   m_Layer: 0
@@ -73,6 +72,7 @@ Transform:
   - {fileID: 5869557599594420418}
   - {fileID: 8766249787708474699}
   - {fileID: 8272549200217568247}
+  - {fileID: 5149918295855999500}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -195,8 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f0755ecfd5751459de042010cabbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   entityStats: {fileID: 5883925624037351410}
 --- !u!114 &3335559989679029225
 MonoBehaviour:
@@ -212,23 +210,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  selectedWeapon: 0
   shellEmitter: {fileID: 826748645650911568}
-  cannonball: {fileID: 3709845789497523889, guid: 034142a8ca723384da1668f9a1a25d85,
-    type: 3}
---- !u!114 &1729787602095928317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172682698217572006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8186baf3cb2475893d398a94b3ccdc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 1.2
-  bulletForce: 15
+  weaponsObjects:
+  - {fileID: 1885695586354761180}
 --- !u!114 &4278445811126324613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +248,53 @@ MonoBehaviour:
   localRotationSensitivity: 0.01
   localScaleSensitivity: 0.01
   compressRotation: 1
+--- !u!1 &1885695586354761180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7238911701361719895}
+  - component: {fileID: 6304997951544441436}
+  m_Layer: 0
+  m_Name: Cannon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7238911701361719895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885695586354761180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5149918295855999500}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6304997951544441436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885695586354761180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8186baf3cb2475893d398a94b3ccdc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 3
+  bulletForce: 10
+  cannonball: {fileID: 3709845789497523889, guid: 034142a8ca723384da1668f9a1a25d85,
+    type: 3}
 --- !u!1 &3244978440499097728
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +745,37 @@ Transform:
   - {fileID: 2787098939309724036}
   m_Father: {fileID: 4217129016015282117}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6334347935821006768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5149918295855999500}
+  m_Layer: 0
+  m_Name: Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5149918295855999500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334347935821006768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7238911701361719895}
+  m_Father: {fileID: 4217129016015282117}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6707892839344891270
 GameObject:

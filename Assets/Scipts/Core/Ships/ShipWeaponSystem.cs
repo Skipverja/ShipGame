@@ -1,35 +1,48 @@
-﻿using Mirror;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Mirror;
 using Scipts.Input;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scipts.Core.Ships
 {
     [RequireComponent(typeof(IPlayerInput))]
-    [RequireComponent(typeof(IWeapon))]
     public class ShipWeaponSystem : NetworkBehaviour
     {
         private IPlayerInput _playerInput;
 
-        private IWeapon _weapon;
+        private float[] _nextShootTimeByWeapon;
 
-        private float _nextShootTime;
+        public int selectedWeapon;
 
         public GameObject shellEmitter;
 
-        public GameObject cannonball;
+        public List<GameObject> weaponsObjects;
+        
+        private IWeapon[] _weapons;
 
         public void Start()
         {
-            _nextShootTime = Time.time;
             _playerInput = GetComponent<IPlayerInput>();
-            _weapon = GetComponent<IWeapon>();
+            
+            _weapons = weaponsObjects
+                .Select(w => w.GetComponent<IWeapon>())
+                .ToArray();
+
+            _nextShootTimeByWeapon = _weapons
+                .Select(_ => Time.time)
+                .ToArray();
+
+            selectedWeapon = 0;
         }
 
         public void Update()
         {
-            if (!_playerInput.Shooting || !(Time.time >= _nextShootTime)) return;
-            
-            _nextShootTime = Time.time + _weapon.Cooldown;
+            if (!_playerInput.Shooting || !(Time.time >= _nextShootTimeByWeapon[selectedWeapon])) 
+                return;
+
+            _nextShootTimeByWeapon[selectedWeapon] = Time.time + _weapons[selectedWeapon].Cooldown;
 
             CmdShoot();
         }
@@ -37,7 +50,7 @@ namespace Scipts.Core.Ships
         [Command]
         private void CmdShoot()
         {
-            _weapon.Shoot(new[] {shellEmitter}, cannonball);
+            _weapons[selectedWeapon].Shoot(new[] {shellEmitter});
         }
     }
 }
