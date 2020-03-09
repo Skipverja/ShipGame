@@ -1,18 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class SandCollisionHandler : MonoBehaviour
+namespace Scipts.Core
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SandCollisionHandler : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void OnTriggerEnter(Collider other)
+        {
+            var es = other.GetComponent<EntityStats>();
+            es.isFreezed = true;
+            
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            var es = other.GetComponent<EntityStats>();
+            es.isFreezed = false;
+        }
     }
 }
