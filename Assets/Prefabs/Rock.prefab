@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3624382331230335125}
   - component: {fileID: 3624382331230335124}
   - component: {fileID: 9165746299695433016}
+  - component: {fileID: 6922769296122553806}
+  - component: {fileID: 5450850802124118087}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Entity
@@ -129,3 +131,29 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   hittable: 0
+--- !u!135 &6922769296122553806
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624382332092555517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 5.299255, y: 6.12375, z: 5.335625}
+--- !u!114 &5450850802124118087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624382332092555517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50a59334782a4c45b9005a3a50005a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders: []
