@@ -6,7 +6,7 @@ namespace Scipts.Core
 {
     public class ShallowWaterCollisionHandler : MonoBehaviour
     {
-        private List<Collider> colliders;
+        public List<Collider> colliders;
         public void Start(){
             colliders = new List<Collider>();
         }
@@ -14,6 +14,8 @@ namespace Scipts.Core
         public void FixedUpdate(){
             colliders.ForEach(
                 (collider) => {
+                    // TODO remove exited colliders
+                    if (collider == null) return;
                     var shipRigidbody = collider.GetComponent<PhysicsLink>();
                     var transform = collider.GetComponent<Transform>();
                     shipRigidbody.AddForce(-shipRigidbody.Velocity.magnitude * transform.forward);
