@@ -14,9 +14,9 @@ namespace Scipts.Core
         public void FixedUpdate(){
             colliders.ForEach(
                 (collider) => {
-                    var shipRigidbody = collider.GetComponent<Rigidbody>();
+                    var shipRigidbody = collider.GetComponent<PhysicsLink>();
                     var transform = collider.GetComponent<Transform>();
-                    shipRigidbody.AddForce(-shipRigidbody.velocity.magnitude * transform.forward);
+                    shipRigidbody.AddForce(-shipRigidbody.Velocity.magnitude * transform.forward);
                 }
             );
         }
