@@ -7,10 +7,10 @@ namespace Scipts.Core.Weapons
 {
     public class CannonGun : MonoBehaviour, IWeapon
     {
-        public float cooldown = 0.1f;
-        public float reloadCooldown = 5f;
+        public float cooldown = 0.5f;
+        public float reloadCooldown = 6f;
         public float bulletForce = 10f;
-        public int bulletsBeforeReload = 30;
+        public int bulletsBeforeReload = 6;
         
         public int bulletsLeft;
 
