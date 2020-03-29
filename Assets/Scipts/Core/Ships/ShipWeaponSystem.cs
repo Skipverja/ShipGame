@@ -16,7 +16,7 @@ namespace Scipts.Core.Ships
 
         [SyncVar] public int selectedWeapon = 0;
 
-        public GameObject shellEmitter;
+        public List<GameObject> shellEmitters;
 
         public List<GameObject> weaponsObjects;
 
@@ -66,7 +66,7 @@ namespace Scipts.Core.Ships
         [Command]
         private void CmdShoot()
         {
-            _weapons[selectedWeapon].Shoot(new[] {shellEmitter});
+            _weapons[selectedWeapon].Shoot(shellEmitters.ToArray());
         }
     }
 }

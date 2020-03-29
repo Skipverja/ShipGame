@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &217865242474726623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4057821767162503137}
+  m_Layer: 0
+  m_Name: ShellEmitter (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4057821767162503137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217865242474726623}
+  m_LocalRotation: {x: -0.018263156, y: 0.7068709, z: -0.018263156, w: -0.7068709}
+  m_LocalPosition: {x: -1.119, y: 1.285, z: -1.0419998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9214942078545085724}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 2.96, y: 270, z: 0}
+--- !u!1 &319138958075781349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9214942078545085724}
+  m_Layer: 0
+  m_Name: Emitters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9214942078545085724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319138958075781349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8766249787708474699}
+  - {fileID: 4057821767162503137}
+  m_Father: {fileID: 4217129016015282117}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826748645650911568
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,11 +86,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826748645650911568}
   m_LocalRotation: {x: -0.018263156, y: 0.7068709, z: 0.018263156, w: 0.7068709}
-  m_LocalPosition: {x: 1.119, y: 1.285, z: -1.042}
+  m_LocalPosition: {x: 1.119, y: 1.285, z: -1.0419998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4217129016015282117}
-  m_RootOrder: 2
+  m_Father: {fileID: 9214942078545085724}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -2.96, y: 90, z: 0}
 --- !u!1 &1172682698217572006
 GameObject:
@@ -70,9 +132,9 @@ Transform:
   m_Children:
   - {fileID: 8716716514461884794}
   - {fileID: 5869557599594420418}
-  - {fileID: 8766249787708474699}
   - {fileID: 8272549200217568247}
   - {fileID: 5149918295855999500}
+  - {fileID: 9214942078545085724}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -211,7 +273,9 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   selectedWeapon: 0
-  shellEmitter: {fileID: 826748645650911568}
+  shellEmitters:
+  - {fileID: 826748645650911568}
+  - {fileID: 217865242474726623}
   weaponsObjects:
   - {fileID: 2463293027098252200}
   - {fileID: 6547936766642213058}
@@ -794,7 +858,7 @@ Transform:
   - {fileID: 4249628956629834436}
   - {fileID: 2787098939309724036}
   m_Father: {fileID: 4217129016015282117}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6334347935821006768
 GameObject:
@@ -827,7 +891,7 @@ Transform:
   - {fileID: 538244547470950176}
   - {fileID: 4891020240349020160}
   m_Father: {fileID: 4217129016015282117}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6547936766642213058
 GameObject:
