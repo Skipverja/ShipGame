@@ -17,12 +17,22 @@ namespace Scipts.Core.Weapons
         {
             foreach (GameObject emitter in emitters)
             {
-                GameObject shell = Instantiate(cannonball, emitter.transform.position, emitters[0].transform.rotation);
-                var shellRigidbody = shell.GetComponent<Rigidbody>();
+                for (int i = -1; i < 2; i++)
+                {
+                    GameObject shell = Instantiate(
+                        cannonball,
+                        emitter.transform.position,
+                        emitter.transform.rotation
+                    );
+                    var shellRigidbody = shell.GetComponent<Rigidbody>();
 
-                shellRigidbody.AddForce(shell.transform.forward * bulletForce);
+                    shellRigidbody.AddForce(
+                        shell.transform.forward * bulletForce +
+                        shell.transform.right * i
+                    );
 
-                NetworkServer.Spawn(shell);
+                    NetworkServer.Spawn(shell);
+                }
             }
         }
     }

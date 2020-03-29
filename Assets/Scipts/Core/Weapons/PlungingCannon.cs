@@ -18,7 +18,7 @@ namespace Scipts.Core.Weapons
         {
             foreach (GameObject emitter in emitters)
             {
-                GameObject shell = Instantiate(cannonball, emitter.transform.position, emitters[0].transform.rotation);
+                GameObject shell = Instantiate(cannonball, emitter.transform.position, emitter.transform.rotation);
                 var shellRigidbody = shell.GetComponent<Rigidbody>();
 
                 shellRigidbody.AddForce(shell.transform.forward * bulletForce + shell.transform.up * upForce);

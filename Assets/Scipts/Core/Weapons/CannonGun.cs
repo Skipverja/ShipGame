@@ -11,7 +11,7 @@ namespace Scipts.Core.Weapons
         public float reloadCooldown = 6f;
         public float bulletForce = 10f;
         public int bulletsBeforeReload = 6;
-        
+
         public int bulletsLeft;
 
         public GameObject cannonball;
@@ -31,16 +31,14 @@ namespace Scipts.Core.Weapons
             {
                 bulletsLeft = bulletsBeforeReload;
             }
+
+            GameObject emitter = emitters[bulletsLeft % emitters.Length];
+            GameObject shell = Instantiate(cannonball, emitter.transform.position, emitter.transform.rotation);
             
-            foreach (GameObject emitter in emitters)
-            {
-                GameObject shell = Instantiate(cannonball, emitter.transform.position, emitters[0].transform.rotation);
-                var shellRigidbody = shell.GetComponent<Rigidbody>();
+            var shellRigidbody = shell.GetComponent<Rigidbody>();
+            shellRigidbody.AddForce(shell.transform.forward * bulletForce);
 
-                shellRigidbody.AddForce(shell.transform.forward * bulletForce);
-
-                NetworkServer.Spawn(shell);
-            }
+            NetworkServer.Spawn(shell);
         }
     }
 }
