@@ -6,7 +6,6 @@ namespace Scipts.Core.Ships
     {
         float Cooldown { get; }
 
-        // TODO: Remove second parameter.
-        void Shoot(GameObject[] emitters, GameObject cannonball);
+        void Shoot(GameObject[] emitters);
     }
 }
