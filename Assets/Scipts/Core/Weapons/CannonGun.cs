@@ -7,9 +7,18 @@ namespace Scipts.Core.Weapons
 {
     public class CannonGun : MonoBehaviour, IWeapon
     {
+        /// <summary>
+        /// Cooldown between shoots.
+        /// </summary>
         public float cooldown = 0.5f;
+        
+        /// <summary>
+        /// After bullets ran out cooldown for reload.
+        /// </summary>
         public float reloadCooldown = 6f;
+        
         public float bulletForce = 10f;
+        
         public int bulletsBeforeReload = 6;
 
         public int bulletsLeft;
