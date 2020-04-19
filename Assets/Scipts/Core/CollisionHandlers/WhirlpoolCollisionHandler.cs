@@ -5,67 +5,41 @@ using UnityEngine;
 
 namespace Scipts.Core
 {
-    public class WhirlpoolCollisionHandler : MonoBehaviour
+    public class WhirlpoolCollisionHandler : IslandCollisionHandler
     {
-        public const float GravityModifier = 10f;
+        public float RotatePower = 1f;
+        public float GrabbingPower = 2.5f;
+
+        public float RotationCoefficient = 0.02f;
         public Transform poolTransform = null;
-        public void HandleCollision(Collider other)
-        {
-            var poolTransform = this.GetComponent<Transform>();
-            var colliderRigidBody = other.GetComponent<PhysicsLink>();
-            
-            var vectorBetween2Objects = poolTransform.position - colliderRigidBody.transform.position;
-            
-
-            var angle = Vector3.Angle(colliderRigidBody.transform.forward, vectorBetween2Objects);
-            var clockModifier = angle > 90f ? 1f : -1f;
-            var velocity = colliderRigidBody.Velocity.magnitude;
-            var direction = vectorBetween2Objects.normalized;
-            var power =  GravityModifier / vectorBetween2Objects.magnitude;
-
-           
-            // colliderRigidBody.AddForce(-direction * power / 10f);
-             colliderRigidBody.transform.Rotate(0f,isClock[other] ? 1f : -1f ,0f);
-            
-        }
-
-        public List<Collider> colliders;
-        public Dictionary<Collider, bool> isClock;
-    
-        public void Start(){
-            colliders = new List<Collider>();
+        
+        public override void Start(){
+            base.Start();
             poolTransform = this.GetComponent<Transform>();
         }
+        
+        public override void HandleCollision(Collider other) {
+            var poolTransform = this.GetComponent<Transform>();
+            var colliderRigidBody = other.GetComponent<Rigidbody>();
+            
+            var poolPosition = poolTransform.position;
+            var colliderVector = colliderRigidBody.transform.position;
+            var vectorBetween2Objects = poolPosition - colliderVector;
+            var distance = vectorBetween2Objects.magnitude;
 
-        public void FixedUpdate(){
-            colliders.ForEach(
-                (collider) => {
-                    // TODO remove exited colliders
-                    if (collider == null) return;
-                    HandleCollision(collider);
-                }
-            );
-        }
+            var nx = -vectorBetween2Objects.z * RotatePower / distance;
+            var ny = Mathf.Sqrt(RotatePower * RotatePower - nx * nx) * Math.Sign(poolPosition.x - colliderVector.x);
+            
+            var forceVector = new Vector3(nx, 0f, ny);
+           
+            var straightAngle = Vector3.Angle(forceVector, colliderRigidBody.transform.forward);
+            var oppositeAngle = Vector3.Angle(forceVector, -colliderRigidBody.transform.forward);
+            var minAngle = Mathf.Min(oppositeAngle, straightAngle);
 
-         private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag(Tags.EntityTag)){
-                
-                var colliderRigidBody = other.GetComponent<PhysicsLink>();
-                var vectorBetween2Objects = poolTransform.position - colliderRigidBody.transform.position;
-                var angle = Vector3.Angle(colliderRigidBody.transform.forward, vectorBetween2Objects);
-                var clockModifier = angle > 90f;
-                colliders.Add(other);
-                isClock.Add(other, clockModifier );
-            }   
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag(Tags.EntityTag)){
-                colliders.Remove(other);
-            }
-
+            colliderRigidBody.AddForce(forceVector * distance * RotatePower  );
+            colliderRigidBody.AddForce(vectorBetween2Objects * GrabbingPower  );
+    
+            colliderRigidBody.transform.Rotate(0f, minAngle * RotationCoefficient, 0f );
         }
     }
 }
