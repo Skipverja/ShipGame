@@ -4,38 +4,13 @@ using UnityEngine;
 
 namespace Scipts.Core
 {
-    public class RockCollisionHandler : MonoBehaviour
+    public class RockCollisionHandler : IslandCollisionHandler
     {
-        
-        public List<Collider> colliders;
-        public void Start(){
-            colliders = new List<Collider>();
-        }
-
-        public void FixedUpdate(){
-            colliders.ForEach(
-                (collider) => {
-                    // TODO remove exited colliders
-                    if (collider == null) return;
-                    var shipRigidbody = collider.GetComponent<PhysicsLink>();
-                    var transform = collider.GetComponent<Transform>();
-                    shipRigidbody.AddForce(3f * transform.forward);
-                }
-            );
-        }
-        private void OnTriggerEnter(Collider other)
+        public override void HandleCollision(Collider other)
         {
-            if (other.CompareTag(Tags.EntityTag)){
-                colliders.Add(other);
-            }   
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag(Tags.EntityTag)){
-                colliders.Remove(other);
-            }
-
+            var shipRigidbody = other.GetComponent<Rigidbody>();
+            var transform = other.GetComponent<Transform>();
+            shipRigidbody.AddForce(3f * transform.forward);
         }
     }
 }

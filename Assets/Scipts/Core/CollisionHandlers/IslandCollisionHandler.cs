@@ -10,7 +10,7 @@ namespace Scipts.Core
         
         public List<Collider> colliders;
     
-        public void Start(){
+        public virtual void Start(){
             colliders = new List<Collider>();
         }
 
@@ -25,14 +25,14 @@ namespace Scipts.Core
         }
 
         public abstract void HandleCollision(Collider other);
-        private void OnTriggerEnter(Collider other)
+        protected void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(Tags.EntityTag)){
                 colliders.Add(other);
             }   
         }
 
-        private void OnTriggerExit(Collider other)
+        protected void OnTriggerExit(Collider other)
         {
             if (other.CompareTag(Tags.EntityTag)){
                 colliders.Remove(other);
