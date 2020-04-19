@@ -7,8 +7,7 @@ namespace Scipts.Core
 {
     public abstract class IslandCollisionHandler : MonoBehaviour
     {
-        
-        public List<Collider> colliders;
+        private List<Collider> colliders;
     
         public virtual void Start(){
             colliders = new List<Collider>();
@@ -25,6 +24,7 @@ namespace Scipts.Core
         }
 
         public abstract void HandleCollision(Collider other);
+        
         protected void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(Tags.EntityTag)){
