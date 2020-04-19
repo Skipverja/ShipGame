@@ -1,25 +1,15 @@
-﻿using UnityEngine;
-
-namespace Scipts.Input
+﻿namespace Scipts.Input
 {
-    public class SimpleAiInput : MonoBehaviour, IPlayerInput
+    public class SimpleAiInput : PlayerInput
     {
         public float rotation = 0f;
     
         public float acceleration = 0f;
 
-        public float Rotation
+        public void Update()
         {
-            get => rotation;
-            set => rotation = value;
+            Acceleration = acceleration;
+            Rotation = Rotation;
         }
-
-        public float Acceleration
-        {
-            get => acceleration;
-            set => acceleration = value;
-        }
-
-        public bool Shooting => true;
     }
 }

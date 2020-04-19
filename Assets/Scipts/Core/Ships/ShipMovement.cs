@@ -4,13 +4,12 @@ using UnityEngine;
 
 namespace Scipts.Core.Ships
 {
-    [RequireComponent(typeof(IPlayerInput))]
-    [RequireComponent(typeof(PhysicsLink))]
+    [RequireComponent(typeof(PlayerInput))]
     public class ShipMovement : NetworkBehaviour
     {
-        private IPlayerInput _playerInput;
+        private PlayerInput _playerInput;
         private Transform _transform;
-        private PhysicsLink _physicsLink;
+        private Rigidbody _rigidbody;
 
         public float speed = 11f;
         public float rotationSpeed = 0.25f;
@@ -26,21 +25,21 @@ namespace Scipts.Core.Ships
   
         public void Start()
         {
-            _playerInput = GetComponent<IPlayerInput>();
-            _physicsLink = GetComponent<PhysicsLink>();
+            _playerInput = GetComponent<PlayerInput>();
+            _rigidbody = GetComponent<Rigidbody>();
             _transform = GetComponent<Transform>();
         }
 
         public void Update()
         {
             if (!isFreezed){
-                _physicsLink.AddForce(_playerInput.Acceleration * speed * transform.forward);
+                _rigidbody.AddForce(_playerInput.Acceleration * speed * transform.forward);
 
                 _transform.Rotate(
                     0f,
-                    rotationSpeed * _playerInput.Rotation * Mathf.Min(_physicsLink.Velocity.magnitude, 1f),
+                    rotationSpeed * _playerInput.Rotation * Mathf.Min(_rigidbody.velocity.magnitude, 1f),
                     0f
-                );
+                 );
             }
         }
 

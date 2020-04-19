@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Scipts.Input
 {
-    public class GamePadInput : MonoBehaviour, IPlayerInput
+    public class GamePadInput : PlayerInput
     {
         public void Update()
         {
@@ -29,11 +29,5 @@ namespace Scipts.Input
         }
 
         public bool AllowBackwardMovement { get; set; } = true;
-
-        public float Rotation { get; set; }
-
-        public float Acceleration { get; set; }
-    
-        public bool Shooting { get; private set; }
     }
 }
