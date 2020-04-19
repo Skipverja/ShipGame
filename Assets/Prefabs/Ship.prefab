@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 4278445811126324613}
   - component: {fileID: 2694333094107435778}
   - component: {fileID: -3477450330834273056}
+  - component: {fileID: 7762100226299027641}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Entity
@@ -314,6 +315,14 @@ MonoBehaviour:
   syncInterval: 0.1
   Velocity: {x: 0, y: 0, z: 0}
   AngularVelocity: {x: 0, y: 0, z: 0}
+--- !u!33 &7762100226299027641
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172682698217572006}
+  m_Mesh: {fileID: 8675452379081041382, guid: 83948d8ac619af5479c1f706d8271248, type: 3}
 --- !u!1 &1885695586354761180
 GameObject:
   m_ObjectHideFlags: 0
