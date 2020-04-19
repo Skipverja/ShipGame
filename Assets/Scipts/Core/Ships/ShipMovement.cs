@@ -14,15 +14,16 @@ namespace Scipts.Core.Ships
         public float speed = 11f;
         public float rotationSpeed = 0.25f;
 
-        [SyncVar] 
+        [SyncVar]
         private bool _isFreezed;
+
         public bool isFreezed
         {
             get { return _isFreezed; }
             set { _isFreezed = value; CmdChangeIsFreezed(value); }
         }
-        
-  
+
+
         public void Start()
         {
             _playerInput = GetComponent<PlayerInput>();
@@ -32,19 +33,21 @@ namespace Scipts.Core.Ships
 
         public void Update()
         {
-            if (!isFreezed){
-                _rigidbody.AddForce(_playerInput.Acceleration * speed * transform.forward);
+            if (isFreezed) return;
 
-                _transform.Rotate(
-                    0f,
-                    rotationSpeed * _playerInput.Rotation * Mathf.Min(_rigidbody.velocity.magnitude, 1f),
-                    0f
-                 );
-            }
+            _rigidbody.AddForce(_playerInput.Acceleration * speed * transform.forward);
+
+            _transform.Rotate(
+                0f,
+                rotationSpeed * _playerInput.Rotation * Mathf.Min(_rigidbody.velocity.magnitude, 1f),
+                0f
+                );
+
         }
 
         [Command]
-        public void CmdChangeIsFreezed(bool value){
+        public void CmdChangeIsFreezed(bool value)
+        {
             _isFreezed = value;
         }
 
