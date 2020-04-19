@@ -12,6 +12,7 @@ public class EntityStats : NetworkBehaviour
         }
     }
 
+
     [Min(0f)] [SyncVar] public float health;
 
     [Min(0.1f)] public float maxHealth = 100f;

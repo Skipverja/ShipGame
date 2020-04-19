@@ -1,33 +1,38 @@
-﻿using System.Collections.Generic;
-using Scipts.Core.Ships;
+
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scipts.Core
 {
-    public class ShallowWaterCollisionHandler : MonoBehaviour
+    public abstract class IslandCollisionHandler : MonoBehaviour
     {
         private List<Collider> colliders;
-        public void Start(){
+    
+        public virtual void Start(){
             colliders = new List<Collider>();
         }
 
         public void FixedUpdate(){
             colliders.ForEach(
                 (collider) => {
-                    var shipRigidbody = collider.GetComponent<Rigidbody>();
-                    var transform = collider.GetComponent<Transform>();
-                    shipRigidbody.AddForce(-shipRigidbody.velocity.magnitude * transform.forward);
+                    // TODO remove exited colliders
+                    if (collider == null) return;
+                    HandleCollision(collider);
                 }
             );
         }
-        private void OnTriggerEnter(Collider other)
+
+        public abstract void HandleCollision(Collider other);
+        
+        protected void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(Tags.EntityTag)){
                 colliders.Add(other);
             }   
         }
 
-        private void OnTriggerExit(Collider other)
+        protected void OnTriggerExit(Collider other)
         {
             if (other.CompareTag(Tags.EntityTag)){
                 colliders.Remove(other);
