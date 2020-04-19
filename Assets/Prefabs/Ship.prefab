@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 4217129016015282117}
   - component: {fileID: 9185516098420211913}
   - component: {fileID: 8088638078261697286}
-  - component: {fileID: 4404932705880013374}
   - component: {fileID: 483880441372117225}
   - component: {fileID: 7740478305148546111}
   - component: {fileID: 5883925624037351410}
@@ -112,6 +111,7 @@ GameObject:
   - component: {fileID: 3335559989679029225}
   - component: {fileID: 4278445811126324613}
   - component: {fileID: 2694333094107435778}
+  - component: {fileID: -3477450330834273056}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Entity
@@ -168,22 +168,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &4404932705880013374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172682698217572006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac7d1a0d2c54210a77939f5cd29bbb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  Velocity: {x: 0, y: 0, z: 0}
-  AngularVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &483880441372117225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.01
+  syncInterval: 0
 --- !u!114 &7740478305148546111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,12 +292,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.03
-  clientAuthority: 1
-  localPositionSensitivity: 0.01
-  localRotationSensitivity: 0.01
+  syncInterval: 0.02
+  clientAuthority: 0
+  localPositionSensitivity: 0.001
+  localRotationSensitivity: 0.001
   localScaleSensitivity: 0.01
-  compressRotation: 1
+  compressRotation: 0
+--- !u!114 &-3477450330834273056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172682698217572006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac7d1a0d2c54210a77939f5cd29bbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  Velocity: {x: 0, y: 0, z: 0}
+  AngularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1885695586354761180
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scipts.Input
 {
-    public class KeyboardInput : NetworkBehaviour, IPlayerInput
+    public class KeyboardInput : PlayerInput
     {
         public void Update()
         {
@@ -34,8 +34,5 @@ namespace Scipts.Input
         }
 
         public bool AllowBackwardMovement {get; set;} = true;
-        public float Rotation { get; set; }
-        public float Acceleration { get; set; }
-        public bool Shooting { get; private set; }
     }
 }

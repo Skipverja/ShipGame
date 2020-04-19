@@ -7,10 +7,10 @@ using UnityEngine.Serialization;
 
 namespace Scipts.Core.Ships
 {
-    [RequireComponent(typeof(IPlayerInput))]
+    [RequireComponent(typeof(PlayerInput))]
     public class ShipWeaponSystem : NetworkBehaviour
     {
-        private IPlayerInput _playerInput;
+        private PlayerInput _playerInput;
 
         private float[] _nextShootTimeByWeapon;
 
@@ -24,7 +24,7 @@ namespace Scipts.Core.Ships
 
         public void Start()
         {
-            _playerInput = GetComponent<IPlayerInput>();
+            _playerInput = GetComponent<PlayerInput>();
 
             _weapons = weaponsObjects
                 .Select(w => w.GetComponent<IWeapon>())
