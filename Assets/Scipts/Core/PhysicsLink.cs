@@ -15,32 +15,16 @@ public class PhysicsLink : NetworkBehaviour
 
     public void FixedUpdate()
     {
-        if (GetComponent<NetworkIdentity>().isServer)
+        if (isServer)
         {
             Velocity = rb.velocity;
             AngularVelocity = rb.angularVelocity;
         }
 
-        if (GetComponent<NetworkIdentity>().isClient)
+        if (isClient)
         {
             rb.velocity = Velocity;
             rb.angularVelocity = AngularVelocity;
         }
-    }
-
-    public void AddForce(Vector3 force)
-    {
-        if (!(isClient && isServer))
-        {
-            rb.AddForce(force);
-        }
-
-        CmdAddForce(force);
-    }
-
-    [Command]
-    public void CmdAddForce(Vector3 force)
-    {
-        rb.AddForce(force);
     }
 }
