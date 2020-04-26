@@ -1,4 +1,6 @@
+using System;
 using Mirror;
+using Scipts.Animation;
 using Scipts.Input;
 using UnityEngine;
 
@@ -29,6 +31,8 @@ namespace Scipts.Core.Ships
             _playerInput = GetComponent<PlayerInput>();
             _rigidbody = GetComponent<Rigidbody>();
             _transform = GetComponent<Transform>();
+
+            CameraFollow.Instance.Follow(_transform);
         }
 
         public void Update()
@@ -51,5 +55,9 @@ namespace Scipts.Core.Ships
             _isFreezed = value;
         }
 
+        private void OnDestroy()
+        {
+            CameraFollow.Instance.Unfollow(_transform);
+        }
     }
 }

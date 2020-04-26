@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 607774921}
   - component: {fileID: 607774923}
   - component: {fileID: 607774922}
+  - component: {fileID: 607774924}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -301,7 +302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607774920}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -19, y: 69.1, z: 27.2}
+  m_LocalPosition: {x: -19, y: 52.6, z: 27.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -340,7 +341,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 59.986397
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -358,6 +359,22 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &607774924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607774920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5295450bba9162429ebaa76426ef9d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomFactor: 1.5
+  followTimeDelta: 0.8
+  accuracy: 0.05
+  minHeight: 50
 --- !u!1001 &1357813249
 PrefabInstance:
   m_ObjectHideFlags: 0
